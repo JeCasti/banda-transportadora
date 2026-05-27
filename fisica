@@ -1,0 +1,335 @@
+import React from 'react';
+
+export default function App() {
+  const sections = [
+    {
+      title: "Problema Detectado",
+      icon: "⚠️",
+      borderColor: "#ef4444",
+      backgroundColor: "#2d1a1a",
+      content:
+        "Durante las horas pico, los paquetes se acumulan en la zona final de clasificación debido a que toda la banda transportadora funciona a velocidad constante.",
+    },
+    {
+      title: "Zona 1 - Aceleración",
+      icon: "🚀",
+      borderColor: "#3b82f6",
+      backgroundColor: "#1e293b",
+      content:
+        "Aplicación de MRUV para aumentar progresivamente la separación entre paquetes antes de la zona crítica.",
+    },
+    {
+      title: "Zona 2 - Regulación",
+      icon: "⚙️",
+      borderColor: "#eab308",
+      backgroundColor: "#2e2b1f",
+      content:
+        "Funciona como un pulmón logístico manteniendo un flujo uniforme mediante MRU.",
+    },
+    {
+      title: "Zona 3 - Desaceleración",
+      icon: "🛑",
+      borderColor: "#22c55e",
+      backgroundColor: "#14241c",
+      content:
+        "Reduce gradualmente la velocidad para evitar impactos y proteger la mercancía.",
+    },
+  ];
+
+  const learnings = [
+    "Diagnóstico matemático del sistema mediante MRU.",
+    "La velocidad no siempre significa eficiencia.",
+    "Optimización energética usando trabajo y potencia.",
+    "Uso de Diagramas de Cuerpo Libre para estabilidad.",
+    "Simuladores PhET como validación experimental.",
+  ];
+
+  // OBJETOS DE ESTILO INYECTADOS DIRECTAMENTE AL NAVEGADOR
+  const mainContainerStyle = {
+    backgroundColor: '#020617', // Fuerza el fondo oscuro profundo
+    color: '#ffffff',           // Fuerza las letras blancas
+    minHeight: '100vh',
+    width: '100%',
+    fontFamily: 'system-ui, -apple-system, sans-serif',
+    margin: 0,
+    padding: 0,
+    boxSizing: 'border-box'
+  };
+
+  const cardStyle = {
+    backgroundColor: '#0f172a',
+    border: '1px solid #334155',
+    borderRadius: '24px',
+    padding: '32px',
+    textAlign: 'center',
+    boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.3)'
+  };
+
+  return (
+    <div style={mainContainerStyle}>
+      {/* HERO */}
+      <section style={{ position: 'relative', padding: '96px 24px', textAlign: 'center', background: 'linear-gradient(135deg, #020617 0%, #1e3a8a 100%)' }}>
+        <div style={{ maxWidth: '1150px', margin: '0 auto' }}>
+          <div style={{ display: 'inline-block', padding: '8px 16px', borderRadius: '9999px', backgroundColor: 'rgba(59, 130, 246, 0.2)', border: '1px solid #60a5fa', color: '#93c5fd', fontSize: '14px', marginBottom: '24px' }}>
+            Proyecto Final · Física Mecánica · U Compensar
+          </div>
+
+          <h1 style={{ fontSize: '48px', fontWeight: '900', marginBottom: '32px', lineHeight: '1.2' }}>
+            Optimización de una <span style={{ color: '#22d3ee' }}>Banda Transportadora</span>
+          </h1>
+
+          <p style={{ maxWidth: '800px', margin: '0 auto 40px', color: '#cbd5e1', fontSize: '18px', lineHeight: '1.6' }}>
+            Aplicación interactiva basada en MRU, MRUV, Leyes de Newton, Trabajo, Energía y Cantidad de Movimiento para resolver la congestión en sistemas logísticos automatizados.
+          </p>
+
+          {/* VÍNCULOS REQUERIDOS */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}>
+            <a
+              href="#problema"
+              style={{ padding: '16px 32px', borderRadius: '16px', backgroundColor: '#3b82f6', color: '#ffffff', fontWeight: 'bold', fontSize: '18px', textDecoration: 'none', boxShadow: '0 10px 15px -3px rgba(59, 130, 246, 0.3)' }}
+            >
+              Ver Proyecto
+            </a>
+
+            <a
+              href="#resultados"
+              style={{ padding: '16px 32px', borderRadius: '16px', border: '1px solid #475569', backgroundColor: 'transparent', color: '#ffffff', fontWeight: 'bold', fontSize: '18px', textDecoration: 'none' }}
+            >
+              Resultados
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* DATOS */}
+      <section style={{ padding: '64px 24px', backgroundColor: '#0f172a' }}>
+        <div style={{ maxWidth: '1150px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
+          <div style={cardStyle}>
+            <div style={{ fontSize: '48px', marginBottom: '16px' }}>📏</div>
+            <h3 style={{ fontSize: '36px', fontWeight: '900', color: '#22d3ee', margin: '0' }}>15 m</h3>
+            <p style={{ color: '#cbd5e1', marginTop: '8px', marginStyle: '0' }}>Longitud de la banda</p>
+          </div>
+
+          <div style={cardStyle}>
+            <div style={{ fontSize: '48px', marginBottom: '16px' }}>⚡</div>
+            <h3 style={{ fontSize: '36px', fontWeight: '900', color: '#3b82f6', margin: '0' }}>0.6 m/s</h3>
+            <p style={{ color: '#cbd5e1', marginTop: '8px', marginStyle: '0' }}>Velocidad inicial</p>
+          </div>
+
+          <div style={cardStyle}>
+            <div style={{ fontSize: '48px', marginBottom: '16px' }}>📦</div>
+            <h3 style={{ fontSize: '36px', fontWeight: '900', color: '#818cf8', margin: '0' }}>1.8 m</h3>
+            <p style={{ color: '#cbd5e1', marginTop: '8px', marginStyle: '0' }}>Separación entre paquetes</p>
+          </div>
+        </div>
+      </section>
+
+      {/* PROBLEMA */}
+      <section id="problema" style={{ padding: '96px 24px', backgroundColor: '#020617' }}>
+        <div style={{ maxWidth: '1150px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: '900', marginBottom: '24px' }}>El Problema del Sistema</h2>
+            <p style={{ color: '#cbd5e1', fontSize: '20px', maxWidth: '750px', margin: '0 auto' }}>
+              El sistema actual funciona bajo MRU, generando acumulaciones en horas pico debido a la falta de sincronización.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
+            <div style={{ ...cardStyle, backgroundColor: 'rgba(239, 68, 68, 0.1)', borderColor: 'rgba(239, 68, 68, 0.3)' }}>
+              <div style={{ fontSize: '48px', marginBottom: '16px' }}>❌</div>
+              <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px' }}>Congestión</h3>
+              <p style={{ color: '#cbd5e1', margin: '0' }}>Los paquetes se acumulan en la zona final durante horas pico.</p>
+            </div>
+
+            <div style={{ ...cardStyle, backgroundColor: 'rgba(249, 115, 22, 0.1)', borderColor: 'rgba(249, 115, 22, 0.3)' }}>
+              <div style={{ fontSize: '48px', marginBottom: '16px' }}>⏳</div>
+              <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px' }}>Retrasos</h3>
+              <p style={{ color: '#cbd5e1', margin: '0' }}>El tiempo de procesamiento aumenta debido al cuello de botella.</p>
+            </div>
+
+            <div style={{ ...cardStyle, backgroundColor: 'rgba(234, 179, 8, 0.1)', borderColor: 'rgba(234, 179, 8, 0.3)' }}>
+              <div style={{ fontSize: '48px', marginBottom: '16px' }}>📉</div>
+              <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px' }}>Daños</h3>
+              <p style={{ color: '#cbd5e1', margin: '0' }}>Las colisiones generan deterioro en la mercancía.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SOLUCION */}
+      <section style={{ padding: '96px 24px', backgroundColor: '#0f172a' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: '900', marginBottom: '24px' }}>Segmentación Cinemática del Flujo</h2>
+            <p style={{ color: '#cbd5e1', fontSize: '20px', maxWidth: '850px', margin: '0 auto', lineHeight: '1.6' }}>
+              La propuesta divide la banda transportadora en zonas dinámicas utilizando principios de MRU y MRUV para controlar el flujo de paquetes.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '32px' }}>
+            {sections.map((section, index) => (
+              <div
+                key={index}
+                style={{ ...cardStyle, backgroundColor: '#1e293b', borderTop: `6px solid ${section.borderColor === '#ef4444' ? '#ef4444' : section.borderColor === '#3b82f6' ? '#3b82f6' : section.borderColor === '#eab308' ? '#eab308' : '#22c55e'}`, textAlign: 'left', padding: '32px' }}
+              >
+                <div style={{ fontSize: '56px', marginBottom: '24px' }}>{section.icon}</div>
+                <h3 style={{ fontSize: '24px', fontWeight: '900', marginBottom: '16px' }}>{section.title}</h3>
+                <p style={{ color: '#cbd5e1', lineHeight: '1.6', margin: '0' }}>{section.content}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FORMULAS */}
+      <section style={{ padding: '96px 24px', backgroundColor: '#020617' }}>
+        <div style={{ maxWidth: '1150px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: '900', marginBottom: '24px' }}>Fundamentos Físicos</h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+            <div style={{ ...cardStyle, textAlign: 'left', backgroundColor: '#0f172a' }}>
+              <h3 style={{ fontSize: '28px', fontWeight: '900', marginBottom: '24px', color: '#22d3ee', marginTop: '0' }}>Cinemática</h3>
+              <div style={{ padding: '16px', backgroundColor: '#1e293b', borderRadius: '16px', marginBottom: '16px' }}>
+                <p style={{ margin: '0 0 4px', fontWeight: 'bold' }}>MRU</p>
+                <p style={{ margin: '0', color: '#cbd5e1' }}>t = d / v</p>
+              </div>
+              <div style={{ padding: '16px', backgroundColor: '#1e293b', borderRadius: '16px' }}>
+                <p style={{ margin: '0 0 4px', fontWeight: 'bold' }}>MRUV</p>
+                <p style={{ margin: '0', color: '#cbd5e1' }}>vf = vi + at</p>
+              </div>
+            </div>
+
+            <div style={{ ...cardStyle, textAlign: 'left', backgroundColor: '#0f172a' }}>
+              <h3 style={{ fontSize: '28px', fontWeight: '900', marginBottom: '24px', color: '#3b82f6', marginTop: '0' }}>Trabajo y Energía</h3>
+              <div style={{ padding: '16px', backgroundColor: '#1e293b', borderRadius: '16px', marginBottom: '16px' }}>
+                <p style={{ margin: '0 0 4px', fontWeight: 'bold' }}>Trabajo</p>
+                <p style={{ margin: '0', color: '#cbd5e1' }}>W = ΔK</p>
+              </div>
+              <div style={{ padding: '16px', backgroundColor: '#1e293b', borderRadius: '16px' }}>
+                <p style={{ margin: '0 0 4px', fontWeight: 'bold' }}>Cantidad de Movimiento</p>
+                <p style={{ margin: '0', color: '#cbd5e1' }}>p = m · v</p>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
+            <div style={{ ...cardStyle, background: 'linear-gradient(135deg, rgba(34,211,238,0.1) 0%, rgba(59,130,246,0.1) 100%)', borderColor: 'rgba(34,211,238,0.2)' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: '900', marginBottom: '16px', marginStyle: '0' }}>Tiempo MRU</h3>
+              <p style={{ fontSize: '36px', fontWeight: '900', color: '#22d3ee', margin: '0 0 8px 0' }}>25 s</p>
+              <p style={{ color: '#cbd5e1', margin: '0' }}>15 / 0.6 = 25 s</p>
+            </div>
+
+            <div style={{ ...cardStyle, background: 'linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(129,140,248,0.1) 100%)', borderColor: 'rgba(59,130,246,0.2)' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: '900', marginBottom: '16px', marginStyle: '0' }}>Velocidad Final</h3>
+              <p style={{ fontSize: '36px', fontWeight: '900', color: '#3b82f6', margin: '0 0 8px 0' }}>1.0 m/s</p>
+              <p style={{ color: '#cbd5e1', margin: '0' }}>vf = 0.6 + (0.2)(2)</p>
+            </div>
+
+            <div style={{ ...cardStyle, background: 'linear-gradient(135deg, rgba(129,140,248,0.1) 0%, rgba(168,85,247,0.1) 100%)', borderColor: 'rgba(129,140,248,0.2)' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: '900', marginBottom: '16px', marginStyle: '0' }}>Trabajo</h3>
+              <p style={{ fontSize: '36px', fontWeight: '900', color: '#818cf8', margin: '0 0 8px 0' }}>3.2 J</p>
+              <p style={{ color: '#cbd5e1', margin: '0' }}>W = ΔK</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* RESULTADOS */}
+      <section id="resultados" style={{ padding: '96px 24px', backgroundColor: '#0f172a' }}>
+        <div style={{ maxWidth: '1150px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: '900', marginBottom: '24px' }}>Resultados Obtenidos</h2>
+          </div>
+
+          <div style={{ overflowHidden: 'hidden', borderRadius: '24px', border: '1px solid #334155', backgroundColor: '#1e293b', boxShadow: '0 25px 50px -12px rgb(0 0 0 / 0.25)' }}>
+            <table style={{ width: '100%', textCollapse: 'collapse', textAlign: 'left' }}>
+              <thead style={{ backgroundColor: '#334155' }}>
+                <tr>
+                  <th style={{ padding: '24px', fontSize: '20px' }}>Variable</th>
+                  <th style={{ padding: '24px', fontSize: '20px' }}>Resultado</th>
+                  <th style={{ padding: '24px', fontSize: '20px' }}>Impacto</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr style={{ borderTop: '1px solid #334155' }}>
+                  <td style={{ padding: '24px' }}>Congestión</td>
+                  <td style={{ padding: '24px', color: '#4ade80', fontWeight: 'bold' }}>Disminuyó</td>
+                  <td style={{ padding: '24px', color: '#cbd5e1' }}>Flujo más estable</td>
+                </tr>
+
+                <tr style={{ borderTop: '1px solid #334155' }}>
+                  <td style={{ padding: '24px' }}>Separación</td>
+                  <td style={{ padding: '24px', color: '#22d3ee', fontWeight: 'bold' }}>Más estable</td>
+                  <td style={{ padding: '24px', color: '#cbd5e1' }}>Menos acumulación</td>
+                </tr>
+
+                <tr style={{ borderTop: '1px solid #334155' }}>
+                  <td style={{ padding: '24px' }}>Daños</td>
+                  <td style={{ padding: '24px', color: '#60a5fa', fontWeight: 'bold' }}>Menores</td>
+                  <td style={{ padding: '24px', color: '#cbd5e1' }}>Protección mercancía</td>
+                </tr>
+
+                <tr style={{ borderTop: '1px solid #334155' }}>
+                  <td style={{ padding: '24px' }}>Consumo Energético</td>
+                  <td style={{ padding: '24px', color: '#818cf8', fontWeight: 'bold' }}>Optimizado</td>
+                  <td style={{ padding: '24px', color: '#cbd5e1' }}>Trabajo solo por zonas</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* APRENDIZAJES */}
+      <section style={{ padding: '96px 24px', backgroundColor: '#020617' }}>
+        <div style={{ maxWidth: '1150px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: '900', marginBottom: '24px' }}>Aprendizajes del Curso</h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px' }}>
+            {learnings.map((item, index) => (
+              <div
+                key={index}
+                style={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '24px', padding: '24px', transition: 'all 0.3s' }}
+              >
+                <div style={{ fontSize: '32px', fontWeight: '900', color: '#22d3ee', marginBottom: '16px' }}>
+                  0{index + 1}
+                </div>
+                <p style={{ color: '#cbd5e1', lineHeight: '1.6', margin: '0' }}>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONCLUSION */}
+      <section style={{ padding: '96px 24px', background: 'linear-gradient(135deg, #1e3a8a 0%, #020617 100%)', textAlign: 'center' }}>
+        <div style={{ maxWidth: '950px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '36px', fontWeight: '900', marginBottom: '32px' }}>Conclusión del Proyecto</h2>
+
+          <p style={{ fontSize: '20px', color: '#cbd5e1', lineHeight: '1.6', marginBottom: '48px' }}>
+            La segmentación cinemática del flujo permitió resolver el problema de congestión en la banda transportadora mediante el uso de principios de Física Mecánica. La aplicación de MRU, MRUV, Leyes de Newton, Trabajo, Energía y Cantidad de Movimiento optimizó el sistema logístico y redujo los riesgos de daño en la mercancía.
+          </p>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}>
+            <div style={{ padding: '12px 24px', borderRadius: '16px', backgroundColor: 'rgba(34,211,238,0.2)', border: '1px solid #22d3ee', color: '#22d3ee', fontWeight: 'bold' }}>MRU</div>
+            <div style={{ padding: '12px 24px', borderRadius: '16px', backgroundColor: 'rgba(59,130,246,0.2)', border: '1px solid #3b82f6', color: '#3b82f6', fontWeight: 'bold' }}>MRUV</div>
+            <div style={{ padding: '12px 24px', borderRadius: '16px', backgroundColor: 'rgba(129,140,248,0.2)', border: '1px solid #818cf8', color: '#818cf8', fontWeight: 'bold' }}>Newton</div>
+            <div style={{ padding: '12px 24px', borderRadius: '16px', backgroundColor: 'rgba(168,85,247,0.2)', border: '1px solid #a855f7', color: '#a855f7', fontWeight: 'bold' }}>Energía</div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer style={{ padding: '40px 24px', textAlign: 'center', borderTop: '1px solid #1e293b', backgroundColor: '#020617' }}>
+        <p style={{ color: '#94a3b8', fontSize: '18px', margin: '0' }}>
+          Tecnología en Desarrollo de Aplicaciones Web y Móviles · U Compensar · 2026
+        </p>
+      </footer>
+    </div>
+  );
+}
